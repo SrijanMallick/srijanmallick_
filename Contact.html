@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0d1b2a, #1b263b);
+        color: #e5e5e5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      /* Header Styling */
+      header {
+        background: linear-gradient(90deg, #1e3c72, #2a5298);
+        padding: 20px 0;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        margin-bottom: 55px;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      .cta-header {
+        background: #ffdd57;
+        color: #000033;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .cta-header:hover {
+        background: #ffd700;
+        transform: scale(1.1);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #ffffff;
+      }
+
+      /* Google Form */
+      iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        .logo {
+          font-size: 1.8rem;
+        }
+
+        .cta-header {
+          font-size: 0.9rem;
+          padding: 8px 15px;
+        }
+
+        .header-container {
+          justify-content: space-between;
+        }
+      }
+
+      .form-container {
+        background-color: white;
+        color: #000033;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 600px;
+        text-align: center;
+      }
+
+      .form-container h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: #1e3c72;
+      }
+
+      .form-container iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+        margin-top: 20px;
+        border-radius: 8px;
+      }
+
+      /* Button Styling (if applicable) */
+      .form-container .submit-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #ffdd57;
+        color: #000033;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .form-container .submit-btn:hover {
+        background: #ffd700;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="header-container">
+          <div class="logo">CONTACT ME</div>
+          <a href="index.html" class="cta-header">Back to Home</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="form-container">
+      <h1>FILL THE FORM</h1>
+      <span>And I'll Get Back!</span>
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdxbpwkhHluPJdQtpvfR5-gfC--VG2yT7eW4VHZZ_mxZdNGzw/viewform?embedded=true"
+        frameborder="0"
+      >
+        Loading…
+      </iframe>
+    </div>
+  </body>
+</html>

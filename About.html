@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Srijan Mallick</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: linear-gradient(to right, #000033, #1a1a40);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+
+      header {
+        background: linear-gradient(90deg, #1e3c72, #2a5298);
+        padding: 20px 0;
+        position: static;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      nav {
+        display: flex;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      nav ul li {
+        list-style: none;
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        transition: color 0.3s, font-size 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #ffdd57;
+        font-size: 1.1rem;
+      }
+
+      .cta-header {
+        display: inline-block;
+        background: #ffdd57;
+        color: #000033;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-left: 20px;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .cta-header:hover {
+        background: #ffd700;
+        transform: scale(1.1);
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+      }
+
+      .section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 80px auto;
+        width: 90%;
+        max-width: 1200px;
+        border-radius: 10px;
+        padding: 40px 20px;
+        gap: 30px; /* Uniform gap between description and image */
+        background: linear-gradient(135deg, rgba(41, 128, 185, 0.4), rgba(142, 68, 173, 0.4)); /* Gradient with more reduced opacity */
+      }
+
+      .sectionContent {
+        width: 50%;
+        animation: fadeIn 2s ease-in-out;
+        padding: 10px;
+        text-align: left;
+        margin-right: 30px;
+      }
+
+      .sectionContent h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #6a5acd, #00fa9a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+      }
+
+      .sectionContent p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #ccc;
+        margin-bottom: 30px;
+      }
+
+      .imageContainer {
+        width: 40%;
+        max-height: 350px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-left: 30px;
+      }
+
+      .imageContainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Even sections */
+      .section:nth-child(even) .imageContainer {
+        order: 1;
+        margin-left: 30px;
+      }
+
+      .section:nth-child(even) .sectionContent {
+        order: 2;
+        margin-right: 0;
+      }
+
+      /* Odd sections */
+      .section:nth-child(odd) .sectionContent {
+        order: 1;
+      }
+
+      .section:nth-child(odd) .imageContainer {
+        order: 2;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(4, 4, 4, 0.8);
+        margin-top: 50px;
+      }
+
+      footer a {
+        color: #00acee;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: lavender;
+      }
+
+      @media (max-width: 1025px) {
+        .section {
+          flex-direction: column;
+          width: 90%;
+        }
+
+        .sectionContent {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        .imageContainer {
+          width: 80%;
+          margin-left: 0;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        nav {
+          display: none;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: rgba(30, 60, 114, 0.9);
+          width: 200px;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+          flex-direction: column;
+          text-align: left;
+          padding: 10px 0;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        nav ul li a {
+          font-size: 1rem;
+          padding: 10px;
+          display: block;
+          transition: all 0.3s;
+        }
+
+        nav ul::after {
+          content: "";
+          display: block;
+        }
+
+        .menu-toggle.active + nav {
+          display: flex;
+        }
+
+        .cta-header {
+          display: none;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">ABOUT ME</div>
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Experience.html">Experience</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Contact.html">Contact Me</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <main>
+      <!-- About Me Section -->
+      <section class="section">
+        <div class="sectionContent">
+          <h1>About Me</h1>
+          <p>
+            I am Srijan Mallick, a passionate B.Tech student at NIT Agartala, majoring in Production Engineering. I have a deep interest in
+            technology, innovation, and entrepreneurship. Along with my academic pursuits, I have led several projects and participated
+            in activities that have broadened my skills and perspective. My goal is to explore new opportunities that combine my
+            technical expertise and leadership skills.
+          </p>
+        </div>
+        <div class="imageContainer">
+          <img src="/srijanmallickpic2.jpg" alt="Srijan Mallick Image" />
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="section">
+        <div class="sectionContent">
+          <h1>Education</h1>
+          <p>
+            I am currently pursuing a B.Tech degree in Production Engineering at NIT Agartala. My coursework has given me a strong foundation
+            in areas such as manufacturing processes, material science, and engineering economics. Through this, I aim to bridge the gap
+            between theory and practice in industrial settings.
+          </p>
+        </div>
+        <div class="imageContainer">
+          <img src="/nit agt.jpg" alt="Education" />
+        </div>
+      </section>
+
+      <!-- General Secretary NIT Agartala Section -->
+      <section class="section">
+        <div class="sectionContent">
+          <h1>General Secretary NIT Agartala</h1>
+          <p>
+            As the General Secretary (Technical) at NIT Agartala, I lead initiatives related to technical events, workshops, and collaborative
+            projects within the campus. This role allows me to collaborate with students, faculty, and industry professionals to foster
+            innovation and practical learning.
+          </p>
+        </div>
+        <div class="imageContainer">
+          <img src="/vijenderchauhan.jpg" alt="General Secretary NIT Agartala" />
+        </div>
+      </section>
+
+      <!-- Business Club Section -->
+      <section class="section">
+        <div class="sectionContent">
+          <h1>Business Club</h1>
+          <p>
+            I co-founded the Business Club at NIT Agartala, where I hold the position of Vice President. The club aims to inspire
+            students to explore entrepreneurship and business management through events, competitions, and guest lectures.
+          </p>
+        </div>
+        <div class="imageContainer">
+          <img src="/bclub.jpg" alt="Business Club" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Created by Srijan Mallick | Follow on
+        <a href="https://linkedin.com/in/SrijanMallick">LinkedIn</a> and
+        <a href="https://instagram.com/srijanmallick_">Instagram</a>.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+      });
+
+      document.querySelectorAll("nav ul li a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.style.display = "none";
+          menuToggle.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
