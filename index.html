@@ -103,9 +103,67 @@
         color: white;
       }
 
+      @media (max-width: 1025px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .toggle-and-cta {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cta-header {
+          margin-top: 10px;
+      padding: 8px 15px; /* Smaller padding for mobile */
+      font-size: 0.8rem;
+      width: fit-content;
+      border-radius: 0;
+        }
+
+        nav {
+          display: none;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: rgba(30, 60, 114, 0.9);
+          width: 200px;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+          flex-direction: column;
+          text-align: center;
+          padding: 10px 0;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        nav ul li a {
+          font-size: 1rem;
+          padding: 10px;
+          display: block;
+          transition: all 0.3s;
+        }
+
+        nav ul::after {
+          content: "";
+          display: block;
+        }
+
+        .menu-toggle.active + nav {
+          display: flex;
+        }
+      }
+
       main {
         flex: 1;
       }
+
 
       .firstSection {
         display: flex;
@@ -165,7 +223,28 @@
         color: lavender;
       }
 
+      .description-section {
+        padding: 40px;
+        margin: 40px auto;
+        text-align: center;
+        background: rgba(30, 60, 114, 0.9);
+        font-size: 2.5rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #6a5acd, #00fa9a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        width: 90%;
+        max-width: 800px;
+        font-size: 1.2rem;
+        line-height: 1.8;
+      }
+
       @media (max-width: 1025px) {
+
+        
         .firstSection {
           flex-direction: column;
           height: auto;
@@ -181,6 +260,7 @@
           font-size: 1.7rem;
           height: 178px;
         }
+
         .rightSection {
           margin-top: 70px;
         }
@@ -221,17 +301,9 @@
           transition: all 0.3s;
         }
 
-        nav ul::after {
-          content: "";
-          display: block;
-        }
-
-        .menu-toggle.active + nav {
-          display: flex;
-        }
-
         .cta-header {
-          display: none;
+          display: block;
+          margin-top: 10px;
         }
       }
 
@@ -250,8 +322,7 @@
   <body>
     <header>
       <div class="header-container">
-        <div class="logo">SRIJAN MALLICK</div>
-        <div class="menu-toggle">&#9776;</div>
+        <div class="logo" style="font-size: 2.635rem;">SRIJAN MALLICK</div>
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -261,8 +332,10 @@
             <li><a href="Contact.html">Contact Me</a></li>
           </ul>
         </nav>
-        <a href="https://linkedin.com/in/srijanmallick" class="cta-header" target="_blank">Let's Connect</a>
-
+        <div class="toggle-and-cta">
+          <div class="menu-toggle">&#9776;</div>
+          <a href="https://linkedin.com/in/srijanmallick" class="cta-header" target="_blank">LET'S CONNECT</a>
+        </div>
       </div>
     </header>
 
@@ -281,6 +354,10 @@
             alt="This is my Image"
           />
         </div>
+      </section>
+
+      <section class="description-section">
+        Welcome to my portfolio website! Here, you can explore my journey, achievements, and the projects I’ve worked on. Don’t forget to check out my experience section and get in touch through the contact page. Let’s connect and collaborate!
       </section>
     </main>
 
@@ -304,8 +381,9 @@
         typeSpeed: 50,
         backSpeed: 30,
         loop: true,
-      });
+      }); </script>
 
+      <script>
       const menuToggle = document.querySelector(".menu-toggle");
       const nav = document.querySelector("nav");
 
@@ -319,6 +397,12 @@
           nav.style.display = "none";
           menuToggle.classList.remove("active");
         });
+      });
+    </script>
+      <script>const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+      menuToggle.addEventListener("click", () => {
+        nav.style.display = nav.style.display === "flex" ? "none" : "flex";
       });
     </script>
   </body>
